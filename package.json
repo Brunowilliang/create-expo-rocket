@@ -1,0 +1,19 @@
+{
+  "name": "create-expo-rocket",
+  "version": "1.0.2",
+  "main": "index.mjs",
+  "bin": {
+    "create-expo-rocket": "./index.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brunowilliang/rn-expo-starter.git"
+  },
+  "private": false,
+  "devDependencies": {
+    "ora": "^7.0.1"
+  },
+  "dependencies": {
+    "inquirer": "^9.2.11"
+  }
+}
