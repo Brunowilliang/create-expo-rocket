@@ -1,24 +1,20 @@
 import fs from 'fs-extra'
 import path from 'path'
-import ora from 'ora'
 import chalk from 'chalk'
-import { promptAppName, execCommand, updateJsonFile, printLogo } from './utils'
-
-export function printError(message: string) {
-  console.error(chalk.red(message))
-}
+import {
+  promptAppName,
+  execCommand,
+  updateJsonFile,
+  printError,
+  Starting,
+} from './utils'
 
 export async function createApp(): Promise<void> {
   const appName = await promptAppName()
 
   const slug = appName.toLowerCase().replace(/\s+/g, '-')
 
-  printLogo()
-
-  console.log(`\x1b[1m🚀 Creating a rocket app...\x1b[0m`)
-
-  const spinner = ora('Starting...').start()
-  spinner.succeed('Starting...')
+  Starting()
 
   // Resolve the path to the new app directory
   const appDir = path.resolve(process.cwd(), appName)

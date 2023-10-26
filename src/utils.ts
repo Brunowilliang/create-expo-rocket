@@ -4,12 +4,21 @@ import chalk from 'chalk'
 import { input } from '@inquirer/prompts'
 import fs from 'fs-extra'
 
-export function printLogo() {
+export function Starting() {
   console.log(`
 ┌─┐┬─┐┌─┐┌─┐┌┬┐┌─┐  ┬─┐┌─┐┌─┐┬┌─┌─┐┌┬┐  ┌─┐┌─┐┌─┐
 │  ├┬┘├┤ ├─┤ │ ├┤   ├┬┘│ ││  ├┴┐├┤  │   ├─┤├─┘├─┘
 └─┘┴└─└─┘┴ ┴ ┴ └─┘  ┴└─└─┘└─┘┴ ┴└─┘ ┴   ┴ ┴┴  ┴  
 `)
+
+  console.log(`\x1b[1m🚀 Creating a rocket app...\x1b[0m`)
+
+  const spinner = ora('Starting...').start()
+  spinner.succeed('Starting...')
+}
+
+export function printError(message: string) {
+  console.error(chalk.red(message))
 }
 
 export function isError(err: any): err is Error {
